@@ -1,0 +1,14 @@
+services:
+  nest:
+    image: node
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npm run start:debug
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
